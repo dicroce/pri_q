@@ -11,8 +11,6 @@ using namespace pri;
 
 REGISTER_TEST_FIXTURE(test_pri_q);
 
-typedef int (*cmp)(const uint8_t* a, const uint8_t* b);
-
 int uint32_cmp(const uint8_t* a, const uint8_t* b)
 {
     if(*(const uint32_t*)a < *(const uint32_t*)b)
@@ -24,7 +22,7 @@ int uint32_cmp(const uint8_t* a, const uint8_t* b)
 
 void test_pri_q::setup()
 {
-    pri_q<cmp>::create_pri_q("priority.dat", sizeof(uint32_t));
+    pri_q::create_pri_q("priority.dat", sizeof(uint32_t));
 }
 
 void test_pri_q::teardown()
@@ -34,7 +32,7 @@ void test_pri_q::teardown()
 
 void test_pri_q::test_basic()
 {
-    pri_q<cmp> priority("priority.dat", uint32_cmp);
+    pri_q priority("priority.dat", uint32_cmp);
 
     vector<uint32_t> vals = {50, 40, 30, 20, 10, 8, 7};
 
@@ -58,7 +56,7 @@ void test_pri_q::test_pop()
 {
     vector<uint32_t> vals = {20, 50, 75, 100, 5, 44, 42, 200, 83, 43, 19, 99, 76, 2, 1000};
 
-    pri_q<cmp> priority("priority.dat", uint32_cmp);
+    pri_q priority("priority.dat", uint32_cmp);
 
     for(auto v: vals) {
         priority.push((uint8_t*)&v);
@@ -76,7 +74,7 @@ void test_pri_q::test_pop()
 
 void test_pri_q::test_rollback()
 {
-    pri_q<cmp> priority("priority.dat", uint32_cmp);
+    pri_q priority("priority.dat", uint32_cmp);
 
     vector<uint32_t> vals = {50};
 

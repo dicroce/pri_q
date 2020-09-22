@@ -8,11 +8,13 @@
 #include <unistd.h>
 #include <set>
 #include <vector>
+#include <functional>
 
 namespace pri
 {
 
-template<typename CMP>
+typedef std::function<int(const uint8_t* a, const uint8_t* b)> CMP;
+
 struct pri_q
 {
 public:
