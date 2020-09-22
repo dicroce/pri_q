@@ -40,3 +40,5 @@ Run tests:
 
     build/ut/pri_ut
 
+# Todo
+    - Add file lock disallow simultaneous writers.
