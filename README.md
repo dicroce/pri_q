@@ -1,5 +1,5 @@
 # pri_q
-A super simple disk based priority queue in C++ (implemented as max heap). Supports atomicity via journal file.
+A disk based priority queue in C++ (implemented as max heap). Supports atomicity via journal file.
 
 First, create a max heap on disk in the file "priority.dat". The size of each element in the max heap must be specified here.
 
