@@ -33,4 +33,10 @@ Here is how you use such a thing. Note: an item comparison function must be prov
 
 # Compiling
 Build in the typical cmake way:
-    mkdir build; pushd build; cmake ..; make;
+
+    mkdir build; pushd build; cmake ..; make; popd;
+
+Run tests:
+
+    build/ut/pri_ut
+
