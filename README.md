@@ -5,7 +5,7 @@ First, create a max heap on disk in the file "priority.dat". The size of each el
 
     pri_q::create_pri_q("priority.dat", sizeof(uint32_t));
 
-Here is how you use such a thing. Note: a item comparison function must be provided. In this case, a lambda is used.
+Here is how you use such a thing. Note: an item comparison function must be provided. In this case, a lambda is used.
 
     vector<uint32_t> vals = {20, 50, 75, 100, 5, 44, 42, 200, 83, 43, 19, 99, 76, 2, 1000};
 
