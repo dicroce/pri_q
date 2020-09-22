@@ -30,3 +30,7 @@ Here is how you use such a thing. Note: an item comparison function must be prov
         });
         priority.pop();
     }
+
+# Compiling
+Build in the typical cmake way:
+    mkdir build; pushd build; cmake ..; make;
